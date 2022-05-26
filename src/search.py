@@ -1,4 +1,5 @@
 
+import json
 from whoosh import index
 from whoosh.fields import Schema, TEXT, KEYWORD, ID, STORED
 from whoosh.analysis import StemmingAnalyzer
@@ -52,19 +53,17 @@ ix = index.create_in("indexdir", schema)
 # get index writer object
 writer = ix.writer()
 
-# add documents to index
-# Note: later we will loop through the json and add each list entry as a document here
-writer.add_document(name=u"mac and cheese", id=u"2395230")
-writer.add_document(name=u"cheesecake", id=u"32523953")
-writer.add_document(name=u"apple pie", id=u"23523523")
+# open json, loop through list and add each recipe object as a document to the index
+x = open('partial_layer1.json')
+layer1 = json.load(x)
+for i in range(0, len(layer1)):
+    writer.add_document(name=layer1[i]["title"], id=layer1[i]["id"])
+
 writer.commit()
-
-
-
 
 # takes in name of the default field to search, and the name of the schema
 qp = QueryParser("name", schema=ix.schema)
-q = qp.parse(u"apple")
+q = qp.parse(u"cheese")
 
 # index searcher object
 with ix.searcher() as searcher:
