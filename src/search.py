@@ -40,7 +40,7 @@ def Store_Matches():
 you can leave off the brackets (e.g. fieldname=TEXT instead of fieldname=TEXT()).
 Whoosh will instantiate the class for you.'''
 schema = Schema(
-    name=TEXT(stored=True),
+    name=TEXT(stored=True, analyzer=StemmingAnalyzer()),
     id=ID(stored=True)
 )
 
