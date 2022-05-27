@@ -1,7 +1,7 @@
 class Recipe:
-    # receipe name (from layer1)
+    # recipe name (from layer1)
     name = "title"
-    # receipe uri (from layer1)
+    # recipe uri (from layer1)
     uri = "http://idea.rpi.edu/heals/kb"
     # list of ingredient objects (from det_igrs)
     ingredients = list()
