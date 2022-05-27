@@ -103,7 +103,7 @@ ix = index.create_in("indexdir", schema)
 writer = ix.writer()
 
 # open json, loop through list and add each recipe object as a document to the index
-x = open('layer1.json')
+x = open('partial_layer1.json')
 layer1 = json.load(x)
 for i in range(0, len(layer1)):
     writer.add_document(name=layer1[i]["title"], id=layer1[i]["id"])
