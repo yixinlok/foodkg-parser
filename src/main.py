@@ -37,8 +37,8 @@ def actOnType():
     with ix.searcher() as searcher:
         results = searcher.search(q, limit=10)
         Store_Matches(results)
-    print("input is: " + user_query)
-    print(Hitted_recipe_names)
+    #print("input is: " + user_query)
+    #print(Hitted_recipe_names)
 
     model = getTableModel()
     recipeList.setModel(model)
@@ -96,7 +96,7 @@ ix = index.create_in("indexdir", schema)
 writer = ix.writer()
 
 # open json, loop through list and add each recipe object as a document to the index
-x = open('partial_layer1.json')
+x = open('/Users/maxwang/Desktop/foodkg-parser/src/partial_layer1.json')
 layer1 = json.load(x)
 for i in range(0, len(layer1)):
     writer.add_document(name=layer1[i]["title"], id=layer1[i]["id"])
