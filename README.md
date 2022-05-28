@@ -7,7 +7,7 @@ Note: The following steps assume you already have python and pip installed.
 ## 1. Clone this repository
 
 ## 2. Download the dataset
-- Go to this google drive(https://drive.google.com/drive/folders/1Kro-oICwmctn_Cg6I6KoBPPfFQC-kFsX) and download the file called <pre><code>MAIN_h02dsaqlo1jd9w9u.seg</code></pre>
+- Go to this google drive(https://drive.google.com/drive/folders/1Kro-oICwmctn_Cg6I6KoBPPfFQC-kFsX) and download the file called <code>MAIN_h02dsaqlo1jd9w9u.seg</code>
 - Move this file into your local cloned repository, under the path <pre><code>path_to_cloned_repository/src/indexdir</code></pre>
 
 ## 3. Download the required Python libraries, Whoosh and PyQt5
@@ -23,6 +23,6 @@ Note: The following steps assume you already have python and pip installed.
 - install PyQt5 by running <pre><code>pip install PyQt5</code></pre>
 
 ## 4. Run the program
-- run <pre><code>python path_to_cloned_repository/src/main.py</code></pre> in the command line or run <pre><code>main.py</code></pre> in your code editor.
+- run <pre><code>python path_to_cloned_repository/src/main.py</code></pre> in the command line or run <code>main.py</code> in your code editor.
 
 
