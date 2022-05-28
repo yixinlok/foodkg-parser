@@ -100,7 +100,7 @@ if not os.path.exists("indexdir"):
 
 ix = index.open_dir("indexdir")
 
-# get index writer object
+# # get index writer object
 # writer = ix.writer()
 # # open json, loop through list and add each recipe object as a document to the index
 # x = open('layer1.json')
