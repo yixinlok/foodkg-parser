@@ -25,6 +25,4 @@ Windows Users:
 ## 4. Run the program
 - run '''python path_to_cloned_repository/src/main.py''' in the command line or run '''main.py''' in your code editor.
 
-if you just want to experiment with the tool with a smaller dataset (it's faster) instead
-- run '''python path_to_cloned_repository/src/partial_main.py'''. This will run it with only 50 recipes from foodkg instead of over 10000.
 
