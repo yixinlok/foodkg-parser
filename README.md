@@ -13,12 +13,12 @@ Note: The following steps assume you already have python and pip installed.
 ## 3. Download the required Python libraries, Whoosh and PyQt5
 
 ### Mac/Linux Users:
-- (optional but suggested) create and activate a python virtual environment by running <pre><code>python3 -m venv venv</code></pre> then <pre><code>source venv/bin/activate</code></pre> in the command line. make sure to run <pre><code>source venv/bin/activate</code></pre> in the same directory every time you want to run the program.
+- (optional but suggested) create and activate a python virtual environment by running the following in the command line <pre><code>python3 -m venv venv</code></pre> <pre><code>source venv/bin/activate</code></pre> make sure to run the second line in the same directory every time you want to run the program.
 - install Whoosh by running <pre><code>pip install Whoosh</code></pre>
 - install PyQt5 by running <pre><code>pip install PyQt5</code></pre>
 
 ### Windows Users:
-- (optional but suggested) create a python virtual environment by running <pre><code>python -m venv venv</code></pre> then <pre><code>venv\Scripts\Activate.ps1</code></pre> in the command line. if you created the virtual environment make sure to run <pre><code>venv\Scripts\Activate.ps1</code></pre> in the same directory every time you want to run the program. 
+- (optional but suggested) create and activate a python virtual environment by running the following in the command line<pre><code>python -m venv venv</code></pre> <pre><code>venv\Scripts\Activate.ps1</code></pre> in the command line. make sure to run the second line in the same directory every time you want to run the program. 
 - install Whoosh by running <pre><code>pip install Whoosh</code></pre>
 - install PyQt5 by running <pre><code>pip install PyQt5</code></pre>
 
