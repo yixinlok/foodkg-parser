@@ -1,17 +1,3 @@
-
-import sys
-
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QGridLayout
-from PyQt5.QtWidgets import QHBoxLayout
-from PyQt5.QtWidgets import QLineEdit
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtWidgets import QTableView
-from PyQt5.QtWidgets import QCheckBox
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
-
-
 def getTableModel(Hitted_recipe_id, Hitted_recipe_names, Hitted_ingredients, Hitted_nutri):
     model = QStandardItemModel(len(Hitted_recipe_names), 2)
 
@@ -38,13 +24,28 @@ def getTableModel(Hitted_recipe_id, Hitted_recipe_names, Hitted_ingredients, Hit
 
 
 def actOnNameType():
-    user_query = nameSearchField.text()
-    print("name search input is: " + user_query)
+    name_query = nameSearchField.text()
+    print("name search input is: " + name_query)
+    actOnState()
+    createTable()
 
 
 def actOnIngrType():
-    user_query = ingrSearchField.text()
-    print("ingr search input is: " + user_query)
+    ingr_query = ingrSearchField.text()
+    print("ingr search input is: " + ingr_query)
+    actOnState()
+    createTable()
+
+
+def actOnState():
+    qp = QueryParser("name", schema=ix.schema)
+    q = qp.parse(name_query)
+    allow_q = query.Term("ingredients", ingr_query)
+
+    with ix.searcher() as searcher:
+        results = s.search(q, filter=allow_q, limit=10)
+        Store_Matches(results)
+    return
 
 
 def createNameSearchBar():
@@ -73,11 +74,11 @@ def createCheckBoxes():
 
 
 def createTable():
-    model = getTableModel(Hitted_recipe_id, Hitted_recipe_names,
-                          Hitted_ingredients, Hitted_nutri)
     recipeList = QTableView()
-    recipeList.setModel(model)
     recipeList.verticalHeader().setVisible(False)
     recipeList.setColumnWidth(1, 500)
     recipeList.resizeColumnsToContents()
+    model = getTableModel(Hitted_recipe_id, Hitted_recipe_names,
+                          Hitted_ingredients, Hitted_nutri)
+    recipeList.setModel(model)
     layout.addWidget(recipeList, 3, 0, 1, 4)
