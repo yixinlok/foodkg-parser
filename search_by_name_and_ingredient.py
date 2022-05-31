@@ -13,7 +13,8 @@ from whoosh.qparser import QueryParser, OrGroup
 # Global variable
 Hitted_ids = list()
 Hitted_recipe_names = list()
-
+Hitted_ingredients = list()
+Hitted_nutri = list()
 #User Menu
 def PrintMenu():
     print("---------------------")
@@ -109,7 +110,7 @@ def sTool(first, second):
 schema = Schema(
     name=TEXT(stored=True, analyzer=StemmingAnalyzer()),
     id=ID(stored=True),
-    ingredients=KEYWORD(stored=True,commas=True),
+    ingredients=KEYWORD(stored=True,commas=True,analyzer=StemmingAnalyzer()),
     nutri_info = TEXT(stored = True)
 )
 
