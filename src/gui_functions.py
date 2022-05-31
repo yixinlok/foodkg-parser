@@ -11,23 +11,6 @@ from PyQt5.QtWidgets import QTableView
 from PyQt5.QtWidgets import QCheckBox
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
-# data
-Hitted_recipe_id = ['000018c8a5', '0001d356b6']
-Hitted_recipe_names = ['Worlds Best Mac and Cheese',
-                       'Lemon Cupcakes with Blueberry Compote Filling and Cream Cheese Frosting']
-Hitted_ingredients = ['Cheese, Macaroni, Sugar',
-                      'Blueberry compote, cream cheese, flour']
-Hitted_nutri = [
-    {
-        "protein": "1000",
-        "fat": "1000"
-    },
-    {
-        "protein": "200",
-        "fat": "2000"
-    }
-]
-
 
 def getTableModel(Hitted_recipe_id, Hitted_recipe_names, Hitted_ingredients, Hitted_nutri):
     model = QStandardItemModel(len(Hitted_recipe_names), 2)
@@ -98,20 +81,3 @@ def createTable():
     recipeList.setColumnWidth(1, 500)
     recipeList.resizeColumnsToContents()
     layout.addWidget(recipeList, 3, 0, 1, 4)
-
-
-# Main program
-app = QApplication(sys.argv)
-window = QWidget()
-window.setWindowTitle('Foodkg Search Tool')
-window.setGeometry(400, 250, 800, 300)
-layout = QGridLayout()
-
-createNameSearchBar()
-createIngredientSearchBar()
-createCheckBoxes()
-createTable()
-
-window.setLayout(layout)
-window.show()
-sys.exit(app.exec_())
