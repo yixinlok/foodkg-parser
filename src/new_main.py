@@ -13,7 +13,6 @@ from whoosh.qparser import QueryParser, OrGroup
 
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QGridLayout
-from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QLabel
@@ -136,7 +135,7 @@ def actOnState():
         q = qp.parse(name_query)
 
         with ix.searcher() as searcher:
-            results = searcher.search(sq, limit=10)
+            results = searcher.search(q, limit=10)
             Store_Matches(results)
 
 
