@@ -118,11 +118,17 @@ def actOnState():
     if name_query!="" and ingr_query!="":
         qp = QueryParser("name", schema=ix.schema)
         q = qp.parse(name_query)
-        allow_q = query.Term("ingredients", ingr_query)
+        if ingr_query[0] == "!":
+            not_allow = query.Term("ingredients", ingr_query[1:len(ingr_query)])
+            with ix.searcher() as searcher:
+                results = searcher.search(q, mask=not_allow, limit=10)
+                Store_Matches(results)
+        else:
+            allow_q = query.Term("ingredients", ingr_query)
 
-        with ix.searcher() as searcher:
-            results = searcher.search(q, filter=allow_q, limit=10)
-            Store_Matches(results)
+            with ix.searcher() as searcher:
+                results = searcher.search(q, filter=allow_q, limit=10)
+                Store_Matches(results)
 
     elif name_query=="" and ingr_query!="":
         qp = QueryParser("ingredients", schema=ix.schema)
@@ -136,7 +142,7 @@ def actOnState():
         q = qp.parse(name_query)
 
         with ix.searcher() as searcher:
-            results = searcher.search(sq, limit=10)
+            results = searcher.search(q, limit=10)
             Store_Matches(results)
 
 
@@ -193,7 +199,7 @@ ix = index.create_in("indexdir", schema)
 
 # addDocsToIndex()
 writer = ix.writer()
-x = open('/Users/yixinlok/Desktop/recipes_with_nutritional_info.json')
+x = open('/Users/maxwang/Desktop/json/recipes_with_nutritional_info.json')
 layer1 = json.load(x)
 for i in range(0, len(layer1)):
     ingredients1 = ""
