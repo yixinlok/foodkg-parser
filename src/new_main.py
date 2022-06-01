@@ -13,7 +13,6 @@ from whoosh.qparser import QueryParser, OrGroup
 
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QGridLayout
-from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtWidgets import QLineEdit
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QLabel
