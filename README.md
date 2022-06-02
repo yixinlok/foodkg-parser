@@ -30,7 +30,7 @@ Note: The following steps assume you already have python and pip installed.
 
 # How to use the tool:
 - <b>Searching multiple ingredients</b>
-For example, for a recipe that uses sugar, eggs and flour, search: <b>sugar eggs flour</b>
+<p>For a recipe that uses sugar, eggs and flour, search: <b>sugar eggs flour</b></p>
 
 - <b>Searching phrases</b>
-For example,for a recipe that uses vanilla extract and baking soda, search: <b>"vanilla extract" "baking soda</b>
+<p>For a recipe that uses vanilla extract and baking soda, search: <b>"vanilla extract" "baking soda"</b></p>
