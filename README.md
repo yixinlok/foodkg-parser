@@ -3,13 +3,13 @@ A tool to search recipes in foodkg and display its data by specific search.
 
 # How to set up the tool:
 Notes: The following steps assume you already have python installed.
-If you are using Windows, you may have to download Make. [Here's a guide](https://www.technewstoday.com/install-and-use-make-in-windows/)
+If you are using Windows, you may have to download Make. [Here's a guide.](https://www.technewstoday.com/install-and-use-make-in-windows/)
 
 1. Clone this repository
-2. In the <code>/src</code> directory, run <pre><code>make setup</code></pre>
+2. In the <code>/src</code> directory, run <code>make setup</code>. This might take a while.
 
 # How to run the tool:
-In the <code>/src</code> directory, run <pre><code>make</code></pre>
+In the <code>/src</code> directory, run <code>make</code>.
 
 # How to use the tool:
 - <b>Searching multiple ingredients</b>
