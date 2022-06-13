@@ -9,7 +9,7 @@ run:
 	$(python) main.py
 
 setup: requirements.txt
-	python -m pip install --user virtualenv
-	python -m virtualenv -p python3 env
+	python3 -m pip install --user virtualenv
+	python3 -m virtualenv -p python3 env
 	$(python) -m pip install -r requirements.txt
 	$(python) load_index.py
