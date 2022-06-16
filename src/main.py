@@ -88,29 +88,34 @@ def Store_Matches(results):
 
 
 def getTableModel(Hitted_recipe_id, Hitted_recipe_names, Hitted_ingredients, Hitted_nutri):
-    model = QStandardItemModel(len(Hitted_recipe_names), 4)
+    model = QStandardItemModel(len(Hitted_recipe_names), 5)
+
+    id_name = list(zip(Hitted_recipe_id,Hitted_recipe_names))
+
+    for row, id in enumerate(id_name):
+        item = QStandardItem(str(id[0])+ ": " + id[1])
+        model.setItem(row, 0, item)
 
     for row, id in enumerate(Hitted_recipe_id):
         item = QStandardItem(id)
-        model.setItem(row, 0, item)
+        model.setItem(row, 1, item)
 
     for row, name in enumerate(Hitted_recipe_names):
         item = QStandardItem(name)
-        model.setItem(row, 1, item)
+        model.setItem(row, 2, item)
 
     for row, ingr in enumerate(Hitted_ingredients):
         item = QStandardItem(ingr)
-        model.setItem(row, 2, item)
+        model.setItem(row, 3, item)
 
     for row, nutri in enumerate(Hitted_nutri):
         item = QStandardItem(str(nutri))
-        model.setItem(row, 3, item)
+        model.setItem(row, 4, item)
 
     model.setHorizontalHeaderLabels(
-        ['ID', 'Recipe Name', 'Ingredients', 'Nutritional Information'])
+        ['ID+Name','ID', 'Recipe Name', 'Ingredients', 'Nutritional Information'])
 
     return model
-
 
 def actOnNameType():
     global name_query
