@@ -38,7 +38,7 @@ Main function
 id_to_recipe = {}
 
 ''' parse through layer1 '''
-x = open('/Users/yixinlok/Desktop/layer1.json')
+x = open('layer1.json')
 print("Loading recipe name and ids ...")
 layer1 = json.load(x)
 
