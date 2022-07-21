@@ -12,4 +12,5 @@ setup: requirements.txt
 	python3 -m pip install --user virtualenv
 	python3 -m virtualenv -p python3 env
 	$(python) -m pip install -r requirements.txt
+	$(python) resources/json_to_dictionary.py
 	$(python) load_index.py
